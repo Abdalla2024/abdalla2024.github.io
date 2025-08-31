@@ -1,0 +1,88 @@
+{
+    "technologies": [
+      {
+        "name": "HTML",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/html.png"
+      },
+      {
+        "name": "CSS",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/css.png"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/tailwind_css.png"
+      },
+      {
+        "name": "Firebase",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/firebase.png"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/javascript.png"
+      },
+      {
+        "name": "React",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/react.png"
+      },
+      {
+        "name": "Next.js",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/next_js.png"
+      },
+      {
+        "name": "TypeScript",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/typescript.png"
+      },
+      {
+        "name": "Node.js",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/node_js.png"
+      },
+      {
+        "name": "Express",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/express.png"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/mongodb.png"
+      },
+      {
+        "name": "PostgreSQL",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postgresql.png"
+      },
+      {
+        "name": "Docker",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/docker.png"
+      },
+      {
+        "name": "Swift",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/swift.png"
+      },
+      {
+        "name": "MySQL",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/mysql.png"
+      },
+      {
+        "name": "Go",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/go.png"
+      },
+      {
+        "name": "Python",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png"
+      },
+      {
+        "name": "Django",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/django.png"
+      },
+      {
+        "name": "C++",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/c++.png"
+      },
+      {
+        "name": "Java",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png"
+      },
+      {
+        "name": "Spring",
+        "icon": "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/spring.png"
+      }
+    ]
+  }
