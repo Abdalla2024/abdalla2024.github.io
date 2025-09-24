@@ -37,6 +37,8 @@ import {
 import profilePic from './assets/profilepic.png'
 
 import bookdLogo from './assets/bookd.png'
+import revatureLogo from './assets/revature.png'
+import hqLogo from './assets/hq.png'
 import tuLogo from './assets/tu.png'
 import nsfLogo from './assets/nsf.png'
 import techIcons from './assets/icons.json'
@@ -181,12 +183,12 @@ const portfolioData = {
     {
       id: 1,
       position: "iOS Developer",
-      company: "Self Employed — Remote",
+      company: "Self-Employed — Remote",
       period: "Jan 2025 - Present",
       description: [
-        "Published and maintained over ten native iOS applications on the App Store, achieving over 2,000 downloads and an average 4.6 rating",
-        "Manage projects end to end in an Agile/Scrum environment with a partner, guiding each app from initial wireframing and UI design through development, QA testing, and App Store release",
-        "Build scalable, maintainable codebases using SwiftUI, UIKit, StoreKit, and MVVM architecture, leveraging Combine and async/await for reactive, high-performance features"
+        "Shipped 10+ native iOS apps to the App Store, driving 3,000+ downloads and maintaining a 4.6 average rating",
+        "Built scalable, maintainable codebases using SwiftUI, UIKit, StoreKit, and MVVM, leveraging Combine and async/await for high-performance features",
+        "Monetized apps through subscriptions and in-app purchases, generating recurring revenue and improving user engagement"
       ],
       tech: ["Swift", "SwiftUI", "UIKit", "StoreKit", "MVVM", "Combine", "Async/Await"]
     },
@@ -208,10 +210,35 @@ const portfolioData = {
       company: "National Science Foundation (NSF) — Baltimore, MD",
       period: "Sep 2024 - Dec 2024",
       description: [
-        "Used Python (pandas) and SQL to clean, merge, and analyze Baltimore City crime and resource datasets, applying regression analysis and simple clustering to uncover relationships",
-        "Built interactive dashboards with Tableau and Matplotlib to highlight trends, then presented actionable insights and recommendations to NSF and university stakeholders"
+        "Analyzed Baltimore City crime/resource datasets with Python (pandas) and SQL, applying regression and clustering to uncover correlations",
+        "Built interactive Tableau dashboards and Matplotlib visualizations to highlight key trends",
+        "Presented insights and policy recommendations to NSF and university stakeholders"
       ],
       tech: ["Python", "Pandas", "SQL", "Tableau", "Matplotlib", "Regression Analysis", "Clustering"]
+    },
+    {
+      id: 4,
+      position: "Software Engineer Intern",
+      company: "Revature — Remote",
+      period: "May 2024 - Aug 2024",
+      description: [
+        "Engineered 6 RESTful API endpoints in Java/Spring Boot with JWT authentication, securing data for 1,000+ users",
+        "Optimized database queries with Spring Data JPA, reducing latency by 30% and improving platform responsiveness",
+        "Authored 15+ unit/integration tests with JUnit 5 and Mockito, uncovering recurring bugs and preventing crashes"
+      ],
+      tech: ["Java", "Spring Boot", "JWT", "Spring Data JPA", "JUnit 5", "Mockito", "REST APIs"]
+    },
+    {
+      id: 5,
+      position: "Software Engineer Intern",
+      company: "HQLABS — Columbia, MD",
+      period: "May 2023 - Aug 2023",
+      description: [
+        "Built a real-time transaction monitoring dashboard with React, TypeScript, and Tremor, enabling live financial data visualization",
+        "Developed high-throughput gRPC services in Go to process financial transactions, improving reliability and throughput",
+        "Deployed microservices with Terraform, streamlining CI/CD and reducing deployment errors"
+      ],
+      tech: ["React", "TypeScript", "Tremor", "Go", "gRPC", "Terraform", "CI/CD", "Microservices"]
     }
   ],
   projects: [
@@ -448,6 +475,10 @@ function ExperienceSection() {
         return tuLogo
       case 3: // Data Science Research Fellow
         return nsfLogo
+      case 4: // Software Engineer Intern - Revature
+        return revatureLogo // Using bookdLogo as placeholder
+      case 5: // Software Engineer Intern - HQLABS
+        return hqLogo // Using bookdLogo as placeholder
       default:
         return null
     }
@@ -493,14 +524,15 @@ function ExperienceSection() {
                   <div className="hidden md:flex items-start relative">
                     {/* Timeline node positioned absolutely in center */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 pt-1 z-10">
-                      <div className="w-16 h-16 bg-background rounded-full flex items-center justify-center border-4 border-primary shadow-lg">
+                      <div className="relative w-16 h-16 rounded-full shadow-lg">
                         {logo && (
                           <img
                             src={logo}
                             alt={`${exp.position} logo`}
-                            className="w-12 h-12 rounded-sm"
+                            className={`absolute inset-0 rounded-full object-cover ${logo === revatureLogo ? 'w-14 h-14 left-1' : 'w-12 h-12 top-2 left-2 bg-background'}`}
                           />
                         )}
+                        <div className="absolute inset-0 w-16 h-16 bg-transparent rounded-full border-4 border-primary"></div>
                       </div>
                     </div>
 
@@ -596,14 +628,15 @@ function ExperienceSection() {
                   {/* Mobile layout - all on right side */}
                   <div className="md:hidden relative flex items-start">
                     {/* Timeline logo */}
-                    <div className="absolute left-2 w-8 h-8 bg-background rounded-full flex items-center justify-center border-2 border-primary">
+                    <div className="absolute left-2 w-8 h-8 rounded-full">
                       {logo && (
                         <img
                           src={logo}
                           alt={`${exp.position} logo`}
-                          className="w-6 h-6 rounded-sm"
+                          className={`absolute inset-0 rounded-full object-cover ${logo === revatureLogo ? 'w-6 h-6 left-0.5' : 'w-6 h-6 top-1 left-1 bg-background'}`}
                         />
                       )}
+                      <div className="absolute inset-0 w-8 h-8 bg-transparent rounded-full border-2 border-primary"></div>
                     </div>
                     
                     {/* Content */}
