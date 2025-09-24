@@ -456,7 +456,7 @@ function ExperienceSection() {
   return (
     <section id="experience" className="py-8 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -464,65 +464,177 @@ function ExperienceSection() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-2xl font-bold mb-6">
+            <h2 className="text-2xl font-bold mb-6 text-center">
               Work Experience
             </h2>
           </motion.div>
+          
           <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-border" />
+            {/* Central timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-[2px] bg-border hidden md:block" />
+            
+            {/* Mobile timeline line */}
+            <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-border md:hidden" />
             
             {portfolioData.experience.map((exp, index) => {
               const logo = getExperienceLogo(exp.id)
+              const isLeft = index % 2 === 0
               
               return (
                 <motion.div
                   key={exp.id}
-                  initial={{ opacity: 0, x: -50 }}
+                  initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="relative flex items-start mb-12"
+                  className="relative mb-12"
                 >
-                  {/* Timeline logo */}
-                  <div className="absolute left-2 w-8 h-8 bg-background rounded-full flex items-center justify-center border-2 border-primary">
-                    {logo && (
-                      <img
-                        src={logo}
-                        alt={`${exp.position} logo`}
-                        className="w-6 h-6 rounded-sm"
-                      />
+                  {/* Desktop layout - alternating sides */}
+                  <div className="hidden md:flex items-start relative">
+                    {/* Timeline node positioned absolutely in center */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 pt-1 z-10">
+                      <div className="w-16 h-16 bg-background rounded-full flex items-center justify-center border-4 border-primary shadow-lg">
+                        {logo && (
+                          <img
+                            src={logo}
+                            alt={`${exp.position} logo`}
+                            className="w-12 h-12 rounded-sm"
+                          />
+                        )}
+                      </div>
+                    </div>
+
+                    {isLeft ? (
+                      <>
+                        {/* Content on left with speech bubble */}
+                        <div className="w-5/12">
+                          <motion.div 
+                            className="relative"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                          >
+                            <Card className="p-6">
+                              <div className="flex flex-col items-start mb-4">
+                                <Badge variant="outline" className="mb-2">
+                                  <CalendarIcon className="mr-1 h-3 w-3" />
+                                  {exp.period}
+                                </Badge>
+                                <h3 className="text-xl font-semibold">{exp.position}</h3>
+                                <p className="text-muted-foreground">{exp.company}</p>
+                              </div>
+                              <ul className="text-muted-foreground mb-4 space-y-2">
+                                {exp.description.map((bullet, bulletIndex) => (
+                                  <li key={bulletIndex} className="flex items-start">
+                                    <span className="text-primary mr-2 mt-1">-</span>
+                                    <span>{bullet}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                              <div className="flex flex-wrap gap-2">
+                                {exp.tech.map((tech, techIndex) => (
+                                  <Badge key={techIndex} variant="secondary" className="text-xs">
+                                    {tech}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </Card>
+                            {/* Speech bubble arrow pointing right */}
+                            <div className="absolute top-6 -right-2 w-0 h-0 border-l-8 border-l-border border-t-8 border-t-transparent border-b-8 border-b-transparent"></div>
+                            <div className="absolute top-6 -right-1 w-0 h-0 border-l-8 border-l-background border-t-8 border-t-transparent border-b-8 border-b-transparent"></div>
+                          </motion.div>
+                        </div>
+                        
+                        {/* Empty space on right */}
+                        <div className="w-7/12"></div>
+                      </>
+                    ) : (
+                      <>
+                        {/* Empty space on left */}
+                        <div className="w-7/12"></div>
+                        
+                        {/* Content on right with speech bubble */}
+                        <div className="w-5/12">
+                          <motion.div 
+                            className="relative"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                          >
+                            <Card className="p-6">
+                              <div className="flex flex-col items-start mb-4">
+                                <Badge variant="outline" className="mb-2">
+                                  <CalendarIcon className="mr-1 h-3 w-3" />
+                                  {exp.period}
+                                </Badge>
+                                <h3 className="text-xl font-semibold">{exp.position}</h3>
+                                <p className="text-muted-foreground">{exp.company}</p>
+                              </div>
+                              <ul className="text-muted-foreground mb-4 space-y-2">
+                                {exp.description.map((bullet, bulletIndex) => (
+                                  <li key={bulletIndex} className="flex items-start">
+                                    <span className="text-primary mr-2 mt-1">-</span>
+                                    <span>{bullet}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                              <div className="flex flex-wrap gap-2">
+                                {exp.tech.map((tech, techIndex) => (
+                                  <Badge key={techIndex} variant="secondary" className="text-xs">
+                                    {tech}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </Card>
+                            {/* Speech bubble arrow pointing left */}
+                            <div className="absolute top-6 -left-2 w-0 h-0 border-r-8 border-r-border border-t-8 border-t-transparent border-b-8 border-b-transparent"></div>
+                            <div className="absolute top-6 -left-1 w-0 h-0 border-r-8 border-r-background border-t-8 border-t-transparent border-b-8 border-b-transparent"></div>
+                          </motion.div>
+                        </div>
+                      </>
                     )}
                   </div>
-                  
-                  {/* Content */}
-                  <div className="ml-16 flex-1">
-                    <div className="mb-4">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                        <div>
-                          <h3 className="text-xl font-semibold">{exp.position}</h3>
-                          <p className="text-muted-foreground">{exp.company}</p>
+
+                  {/* Mobile layout - all on right side */}
+                  <div className="md:hidden relative flex items-start">
+                    {/* Timeline logo */}
+                    <div className="absolute left-2 w-8 h-8 bg-background rounded-full flex items-center justify-center border-2 border-primary">
+                      {logo && (
+                        <img
+                          src={logo}
+                          alt={`${exp.position} logo`}
+                          className="w-6 h-6 rounded-sm"
+                        />
+                      )}
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="ml-16 flex-1">
+                      <Card className="p-4">
+                        <div className="mb-4">
+                          <div className="flex flex-col mb-2">
+                            <Badge variant="outline" className="mb-2 w-fit">
+                              <CalendarIcon className="mr-1 h-3 w-3" />
+                              {exp.period}
+                            </Badge>
+                            <h3 className="text-xl font-semibold">{exp.position}</h3>
+                            <p className="text-muted-foreground">{exp.company}</p>
+                          </div>
+                          <ul className="text-muted-foreground mb-4 space-y-2">
+                            {exp.description.map((bullet, bulletIndex) => (
+                              <li key={bulletIndex} className="flex items-start">
+                                <span className="text-primary mr-2 mt-1">-</span>
+                                <span>{bullet}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          <div className="flex flex-wrap gap-2">
+                            {exp.tech.map((tech, techIndex) => (
+                              <Badge key={techIndex} variant="secondary" className="text-xs">
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
                         </div>
-                        <Badge variant="outline" className="mt-2 sm:mt-0 w-fit">
-                          <CalendarIcon className="mr-1 h-3 w-3" />
-                          {exp.period}
-                        </Badge>
-                      </div>
-                      <ul className="text-muted-foreground mb-4 space-y-2">
-                        {exp.description.map((bullet, bulletIndex) => (
-                          <li key={bulletIndex} className="flex items-start">
-                            <span className="text-primary mr-2 mt-1">-</span>
-                            <span>{bullet}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.tech.map((tech, techIndex) => (
-                          <Badge key={techIndex} variant="secondary" className="text-xs">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
+                      </Card>
                     </div>
                   </div>
                 </motion.div>
