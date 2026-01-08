@@ -186,9 +186,9 @@ const portfolioData = {
       company: "Golden Arc Software — Remote",
       period: "Jan 2025 - Present",
       description: [
-        "Shipped 10+ native iOS apps to the App Store, driving 3,000+ downloads and maintaining a 4.6 average rating",
-        "Built scalable, maintainable codebases using SwiftUI, UIKit, StoreKit, and MVVM, leveraging Combine and async/await for high-performance features",
-        "Monetized apps through subscriptions and in-app purchases, generating recurring revenue and improving user engagement"
+        "Shipped 14 native iOS apps to the App Store, driving over 3,000 downloads and maintaining a 4.6 average rating",
+        "Took apps through the entire lifecycle, from concept and Figma design to development, testing, and successful App Store launches",
+        "Monetized apps through subscriptions and in-app purchases, generating over $200 of monthly recurring revenue"
       ],
       tech: ["Swift", "SwiftUI", "UIKit", "StoreKit", "MVVM", "Combine", "Async/Await"]
     },
