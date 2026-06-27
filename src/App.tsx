@@ -182,8 +182,8 @@ const portfolioData = {
   experience: [
     {
       id: 1,
-      position: "iOS Developer",
-      company: "Golden Arc Software — Remote",
+      position: "Independent iOS Developer",
+      company: "Self-Employed — Remote",
       period: "Jan 2025 - Present",
       description: [
         "Shipped 14 native iOS apps to the App Store, reaching over 10,000 downloads and maintaining a 4.6 average rating",
