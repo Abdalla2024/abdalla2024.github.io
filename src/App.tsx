@@ -62,12 +62,12 @@ import app1screen5 from './assets/app1screenshots/app1screen5.png'
 import app1screen6 from './assets/app1screenshots/app1screen6.png'
 import app1screen7 from './assets/app1screenshots/app1screen7.png'
 
-import app10screen1 from './assets/app10screenshots/01 – iPhone16.png'
-import app10screen2 from './assets/app10screenshots/02 – iPhone16.png'
-import app10screen3 from './assets/app10screenshots/03 – iPhone16.png'
-import app10screen4 from './assets/app10screenshots/04 – iPhone16.png'
-import app10screen5 from './assets/app10screenshots/05 – iPhone16.png'
-import app10screen6 from './assets/app10screenshots/06 – iPhone16.png'
+import journal1 from './assets/journalscreenshots/journal1.png'
+import journal2 from './assets/journalscreenshots/journal2.png'
+import journal3 from './assets/journalscreenshots/journal3.png'
+import journal4 from './assets/journalscreenshots/journal4.png'
+import journal5 from './assets/journalscreenshots/journal5.png'
+import journal6 from './assets/journalscreenshots/journal6.png'
 
 import pomo1 from './assets/app3screenshots/pomo1.png'
 import pomo2 from './assets/app3screenshots/pomo2.png'
@@ -118,8 +118,8 @@ import hh5 from './assets/hwhelper/hh5png.png'
 // Screenshot mappings
 const appScreenshots = {
   1: {
-    screens: [app10screen1, app10screen2, app10screen3, app10screen4, app10screen5, app10screen6],
-    name: "Mobile Automation MCP Server"
+    screens: [journal1, journal2, journal3, journal4, journal5, journal6],
+    name: "Journal App: Diary with Lock"
   },
   2: {
     screens: [app1screen1, app1screen2, app1screen3, app1screen4, app1screen5, app1screen6, app1screen7],
